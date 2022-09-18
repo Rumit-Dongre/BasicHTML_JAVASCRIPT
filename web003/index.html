@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    
+    <h1> Contact Form With Javascript </h1>
+    <form id="formdata" action="index.html">
+        <input type="text" placeholder="Name" name="name" value="ninja">
+        <input type="text" placeholder="Email" name="email">
+
+    </form>
+    <div>
+        <h1>You Enter </h1>
+        <h1 id="name"></h1>
+        <h1 id="email"></h1>
+    </div>
+
+
+
+
+
+    <input type="submit" value="Regsiter" onclick="myfun()">
+</body>
+<script>
+    const myfun = () => {
+        let arr = []
+        let name = document.getElementById('formdata')[0].value
+        let email = document.getElementById('formdata')[1].value
+
+
+        alert("Submitted")
+        console.log(name)
+        console.log(email)
+
+        document.getElementById('name').innerHTML = name
+        document.getElementById('email').innerHTML = email
+
+    }
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web calculator </title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+        .box{
+            background-color: #827397;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .box input{
+            padding: 12px;
+
+        }
+        .btn{
+            margin-top: 12px;
+            border: 2px solid rgb(22, 168, 160);
+            /* border: 2px solid red; */
+        }
+        #res{
+            text-transform: capitalize;
+            margin-top: 12px;
+            color: rgb(12, 13, 12);
+            font-size: x-large;
+        }
+        #result{
+            text-transform: capitalize;
+            margin-top: 12px;
+            color: rgb(255, 255, 255);
+            font-size: x-large;
+        }
+        #op{
+            border: 2px solid rgb(15, 68, 57);
+            display: block;
+            margin-top: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        
+        .box  input:hover{
+            border: 2px solid red;
+
+        }
+      
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <form action="index.html" id="formdata">
+
+            <input type="number" name="num1" id="num1" placeholder="Enter The Num 1"> <br><br>
+            <input type="number" name="num2" id="num2" placeholder="Enter The Num 2">
+
+
+            <select name="opreation" id="op" >
+                <option value="add">Add </option>
+                <option value="multiply">Multiply </option>
+                <option value="subtract">Subtract </option>
+                <option value="divide">Divide </option>
+            </select>
+
+        </form>
+        <input class="btn"  type="submit" onclick="calculator()">
+        <p id="res">
+            Result: <span id="result"> </span>
+        </p>
+    </div>
+
+</body>
+
+
+<script>
+    let data = document.getElementById('formdata')
+    console.log(data[2])
+
+    const calculator = () => {
+
+        let num1 = document.getElementById('formdata')[0].value
+        let num2 = document.getElementById('formdata')[1].value
+        let opt = document.getElementById('formdata')[2].value
+
+
+        if (num1 != "" && num2 != "") {
+
+            let sum;
+            switch (opt) {
+                case "add":
+                    sum = Number(num1) + Number(num2)
+                    document.getElementById('result').innerText = `Addition of ${sum}`
+                    break;
+                case "multiply":
+                    sum = Number(num1) * Number(num2)
+                    document.getElementById('result').innerText = `Multiplication of ${sum}`
+                    break;
+                case "subtract":
+                    sum = Number(num1) - Number(num2)
+                    document.getElementById('result').innerText = `Subtraction of ${sum}`
+                    break;
+                case "divide":
+                    sum = Number(num1) / Number(num2)
+                    document.getElementById('result').innerText = `Division of ${sum}`
+                    break;
+
+                default:
+                    document.getElementById('result').innerText = ""
+                    break;
+            }
+        }
+
+
+        else {
+            alert("Please Enter Value")
+        }
+
+
+
+
+
+
+    }
+
+
+</script>
+
+</html>
